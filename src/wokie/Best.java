@@ -7,18 +7,25 @@ import java.math.*;
 import java.util.ArrayList;
 
 public class Best {
+    static int brk;
     static ArrayList<Integer> deviders = new ArrayList<>();
     public static void dev(int i) {
-        int c = i;
+
         int j=1;
 
-        while (c > j) {
-            if (c % j == 0) {
+        for (int c=2; c < 12; c++) {
+            if (i % c == 0) {
+              brk=c;
+                break;
+            } else brk = 1;
+        }
+        while ((i/brk) >= j) {
+            if (i % j == 0) {
                 deviders.add(j);
             }
             j++;
         }
-        deviders.add(c);
+       if(brk!=1) deviders.add(i);
 
     }
 
