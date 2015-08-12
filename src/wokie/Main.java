@@ -7,11 +7,10 @@ import java.util.Scanner;
  */
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int ent = sc.nextInt();
-        System.out.println();
+
         Best a = new Best();
-        a.dev(ent);
+
+        a.dev();
         a.output();
     }
 }
