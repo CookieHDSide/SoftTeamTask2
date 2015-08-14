@@ -5,6 +5,7 @@ package wokie;
  */
 import java.math.*;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class Best {
@@ -22,19 +23,14 @@ public class Best {
         if (i != 0) {
 
 
-        for (int c = 2; c < 12; c++) {
-            if (i % c == 0) {
-                brk = c;
-                break;
-            } else brk = 1;
-        }
-        while ((i / brk) >= j) {
+        while (Math.sqrt(i) >= j) {
             if (i % j == 0) {
                 deviders.add(j);
+                deviders.add(i/j);
             }
             j++;
         }
-        if (brk != 1) {deviders.add(i);}
+        deviders.sort(Comparator.<Integer>naturalOrder());
 
 }}
 
